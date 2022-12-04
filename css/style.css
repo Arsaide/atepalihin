@@ -150,7 +150,7 @@ h6 {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   margin: 0 auto;
-  padding: 0 0.625rem;
+  padding: 0 0.9375rem;
 }
 
 [class*=-ibg] {
@@ -220,11 +220,12 @@ h6::selection {
 .text {
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 140%;
+  line-height: 130%;
   letter-spacing: 0.1em;
 }
 
 .text p {
+  text-indent: 25px;
   padding-bottom: 20px;
 }
 
@@ -282,10 +283,15 @@ h6::selection {
   -webkit-transition: fill 0.3s ease 0s;
   -o-transition: fill 0.3s ease 0s;
   transition: fill 0.3s ease 0s;
+  z-index: 100;
 }
 
 .logo:hover {
   fill: rgb(70, 70, 70);
+}
+
+.menu-open .logo {
+  fill: rgb(0, 0, 0);
 }
 
 body::-webkit-scrollbar-track {
@@ -736,7 +742,6 @@ body::-webkit-scrollbar-thumb {
 .info-main__text {
   max-width: 700px;
   margin: 1.875rem 0rem 1.875rem 0rem;
-  text-align: justify;
 }
 
 .info-img {
@@ -768,7 +773,7 @@ body::-webkit-scrollbar-thumb {
           filter: saturate(260%);
 }
 
-@media (min-width: 101.25em) {
+@media (min-width: 101.875em) {
   .title {
     padding-top: 3.125rem;
   }
@@ -1008,6 +1013,11 @@ body::-webkit-scrollbar-thumb {
 
   .banner__text-list-item {
     list-style-type: none;
+    margin: 0;
+  }
+
+  .banner__content-right {
+    display: none;
   }
 
   .banner__right-title {
@@ -1053,58 +1063,58 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media (min-width: 20em) and (max-width: 101.25em) {
-@supports (padding-top: clamp( 3.125rem , 6.2403846154rem  +  -3.0769230769vw , 5.625rem )) {
+@media (min-width: 20em) and (max-width: 101.875em) {
+@supports (padding-top: clamp( 3.125rem , 6.2356870229rem  +  -3.0534351145vw , 5.625rem )) {
     .title {
-      padding-top: clamp( 3.125rem , 6.2403846154rem  +  -3.0769230769vw , 5.625rem );
+      padding-top: clamp( 3.125rem , 6.2356870229rem  +  -3.0534351145vw , 5.625rem );
     }
 }
 
-@supports not (padding-top: clamp( 3.125rem , 6.2403846154rem  +  -3.0769230769vw , 5.625rem )) {
+@supports not (padding-top: clamp( 3.125rem , 6.2356870229rem  +  -3.0534351145vw , 5.625rem )) {
     .title {
-      padding-top: calc(5.625rem + -2.5 * (100vw - 20rem) / 81.25);
+      padding-top: calc(5.625rem + -2.5 * (100vw - 20rem) / 81.875);
     }
 }
 
-@supports not (width: clamp( 0.0625rem , -2.2298076923rem  +  11.4615384615vw , 9.375rem )) {
+@supports not (width: clamp( 0.0625rem , -2.2123091603rem  +  11.3740458015vw , 9.375rem )) {
     .menu__link {
-      width: calc(0.0625rem + 9.3125 * (100vw - 20rem) / 81.25);
+      width: calc(0.0625rem + 9.3125 * (100vw - 20rem) / 81.875);
     }
 }
 
-@supports (padding-top: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem )) {
+@supports (padding-top: clamp( 2.5rem , 1.2786259542rem  +  6.106870229vw , 7.5rem )) {
     .banner__content {
-      padding-top: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem );
+      padding-top: clamp( 2.5rem , 1.2786259542rem  +  6.106870229vw , 7.5rem );
     }
 }
 
-@supports not (padding-top: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem )) {
+@supports not (padding-top: clamp( 2.5rem , 1.2786259542rem  +  6.106870229vw , 7.5rem )) {
     .banner__content {
-      padding-top: calc(2.5rem + 5 * (100vw - 20rem) / 81.25);
+      padding-top: calc(2.5rem + 5 * (100vw - 20rem) / 81.875);
     }
 }
 
-@supports (padding-bottom: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem )) {
+@supports (padding-bottom: clamp( 2.5rem , 1.2786259542rem  +  6.106870229vw , 7.5rem )) {
     .banner__content {
-      padding-bottom: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem );
+      padding-bottom: clamp( 2.5rem , 1.2786259542rem  +  6.106870229vw , 7.5rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem )) {
+@supports not (padding-bottom: clamp( 2.5rem , 1.2786259542rem  +  6.106870229vw , 7.5rem )) {
     .banner__content {
-      padding-bottom: calc(2.5rem + 5 * (100vw - 20rem) / 81.25);
+      padding-bottom: calc(2.5rem + 5 * (100vw - 20rem) / 81.875);
     }
 }
 
-@supports (font-size: clamp( 3.125rem , 2.6634615385rem  +  2.3076923077vw , 5rem )) {
+@supports (font-size: clamp( 3.125rem , 2.6669847328rem  +  2.2900763359vw , 5rem )) {
     .banner__title {
-      font-size: clamp( 3.125rem , 2.6634615385rem  +  2.3076923077vw , 5rem );
+      font-size: clamp( 3.125rem , 2.6669847328rem  +  2.2900763359vw , 5rem );
     }
 }
 
-@supports not (font-size: clamp( 3.125rem , 2.6634615385rem  +  2.3076923077vw , 5rem )) {
+@supports not (font-size: clamp( 3.125rem , 2.6669847328rem  +  2.2900763359vw , 5rem )) {
     .banner__title {
-      font-size: calc(3.125rem + 1.875 * (100vw - 20rem) / 81.25);
+      font-size: calc(3.125rem + 1.875 * (100vw - 20rem) / 81.875);
     }
 }
 }
