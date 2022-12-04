@@ -396,7 +396,7 @@ body::-webkit-scrollbar-thumb {
   right: 0;
 }
 
-.sub-list__item {
+.sub-list__link {
   height: 80px;
   width: 150px;
   background: #fff;
@@ -412,18 +412,13 @@ body::-webkit-scrollbar-thumb {
           justify-content: center;
 }
 
-.sub-list__item:hover {
+.sub-list__link:hover {
   background-color: rgb(151, 151, 151);
   font-weight: 600;
 }
 
-.sub-list__link {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
 .menu__left-list,
-.menu__right-list > li:hover .sub-list__item {
+.menu__right-list > li:hover .sub-list__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -602,7 +597,7 @@ body::-webkit-scrollbar-thumb {
 
 .banner__content-left {
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .banner__content-left::after {
@@ -613,6 +608,10 @@ body::-webkit-scrollbar-thumb {
   right: 30%;
   opacity: 0.3;
   z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .banner__title {
@@ -789,10 +788,6 @@ body::-webkit-scrollbar-thumb {
   .banner__title {
     font-size: 5rem;
   }
-
-  .info-main__text {
-    max-width: 43.75rem;
-  }
 }
 
 @media (max-width: 20em) {
@@ -898,7 +893,7 @@ body::-webkit-scrollbar-thumb {
     left: 0;
   }
 
-  .sub-list__item {
+  .sub-list__link {
     width: 100%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -1036,7 +1031,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .info-main__text {
-    max-width: 650px;
+    max-width: 600px;
   }
 }
 
@@ -1050,6 +1045,10 @@ body::-webkit-scrollbar-thumb {
   .banner__content-left::after {
     font-size: 18.75rem;
     top: 50px;
+  }
+
+  .info-main__text {
+    max-width: 100%;
   }
 }
 
@@ -1105,18 +1104,6 @@ body::-webkit-scrollbar-thumb {
 @supports not (font-size: clamp( 3.125rem , 2.6634615385rem  +  2.3076923077vw , 5rem )) {
     .banner__title {
       font-size: calc(3.125rem + 1.875 * (100vw - 20rem) / 81.25);
-    }
-}
-
-@supports (max-width: clamp( 18.75rem , 12.5961538462rem  +  30.7692307692vw , 43.75rem )) {
-    .info-main__text {
-      max-width: clamp( 18.75rem , 12.5961538462rem  +  30.7692307692vw , 43.75rem );
-    }
-}
-
-@supports not (max-width: clamp( 18.75rem , 12.5961538462rem  +  30.7692307692vw , 43.75rem )) {
-    .info-main__text {
-      max-width: calc(18.75rem + 25 * (100vw - 20rem) / 81.25);
     }
 }
 }
